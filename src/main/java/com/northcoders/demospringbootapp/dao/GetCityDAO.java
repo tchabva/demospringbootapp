@@ -1,7 +1,7 @@
 package com.northcoders.demospringbootapp.dao;
 
 import com.northcoders.demospringbootapp.model.City;
-import com.northcoders.demospringbootapp.model.Results;
+import com.northcoders.demospringbootapp.model.CityResults;
 import org.springframework.web.reactive.function.client.WebClient;
 
 public class GetCityDAO {
@@ -11,11 +11,11 @@ public class GetCityDAO {
                 .baseUrl("https://geocoding-api.open-meteo.com/v1/search")
                 .build();
 
-        Results responseBody = webClient
+        CityResults responseBody = webClient
                 .get()
                 .uri("?name="+city+"&count=1&language=en&format=json")
                 .retrieve()
-                .bodyToMono(Results.class)
+                .bodyToMono(CityResults.class)
                 .block();
 
         return responseBody.results().getFirst();
