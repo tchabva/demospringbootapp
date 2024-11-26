@@ -14,10 +14,9 @@ public class ConsoleInputRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception{
-        Scanner scanner =new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a City: ");
         String cityString = scanner.nextLine();
-        System.out.println(cityString);
 
         City city = GetCityDAO.getCity(cityString);
 
