@@ -1,8 +1,10 @@
 package com.northcoders.demospringbootapp.controller;
 
 import com.northcoders.demospringbootapp.dao.GetCityDAO;
+import com.northcoders.demospringbootapp.dao.GetSunriseSunsetDAO;
 import com.northcoders.demospringbootapp.model.City;
 import com.northcoders.demospringbootapp.model.Person;
+import com.northcoders.demospringbootapp.model.SunriseSunset;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +15,7 @@ import java.util.List;
 @RequestMapping("api/v1")
 public class DemoController {
 
+    City city = GetCityDAO.getCity("London");
 
     @GetMapping("/hello")
     public String getHello(){
@@ -32,7 +35,14 @@ public class DemoController {
 
     @GetMapping("/city")
     public City getCity(){
-        City city = GetCityDAO.getCity("Paris");
+
         return city;
+    }
+
+    @GetMapping("/sun")
+    public SunriseSunset getSunriseSunset(){
+
+        return GetSunriseSunsetDAO.getSun(city.latitude(),city.longitude());
+
     }
 }
