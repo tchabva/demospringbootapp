@@ -13,19 +13,7 @@ public class DemospringbootappApplication {
 
 	public static void main(String[] args) {
 
-
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("enter city:");
-		city = scanner.nextLine();
-
-
 		SpringApplication.run(DemospringbootappApplication.class, args);
-
-
-		//Terminal application:
-		//	- you can enter multiple cities.
-		//  - **the terminal displays the answer**
-
 
 	}
 
