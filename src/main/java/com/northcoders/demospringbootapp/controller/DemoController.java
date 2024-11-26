@@ -32,7 +32,7 @@ public class DemoController {
 
     @GetMapping("/city")
     public City getCity(){
-        City city = GetCityDAO.getCity();
+        City city = GetCityDAO.getCity("Paris");
         return city;
     }
 }
