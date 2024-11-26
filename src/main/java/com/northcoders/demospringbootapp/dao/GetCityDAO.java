@@ -15,7 +15,7 @@ public class GetCityDAO {
         try{
             CityResults responseBody = webClient
                     .get()
-                    .uri("?name="+ DemospringbootappApplication.city +"&count=1&language=en&format=json")
+                    .uri("?name="+ city +"&count=1&language=en&format=json")
                     .retrieve()
                     .bodyToMono(CityResults.class)
                     .block();
