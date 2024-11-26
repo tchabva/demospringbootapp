@@ -42,7 +42,7 @@ public class DemoController {
     @GetMapping("/sun")
     public SunriseSunset getSunriseSunset(){
 
-        return GetSunriseSunsetDAO.getCity(city.latitude(),city.longitude());
+        return GetSunriseSunsetDAO.getSun(city.latitude(),city.longitude());
 
     }
 }
